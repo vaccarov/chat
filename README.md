@@ -1,9 +1,20 @@
-# Test Toutes Mes Aides
+# Technical Test for Toutes Mes Aides
+
+## Description
+
+The aim is to make a chat with live data (#messenger). The server is already code, but is not online you have 
+to run it on you computer. The server uses Express and Socket.io.
+ 
+You have to create a small Application with a a connection page and a chat page with the list of the users and all the 
+messages.
+
+If you want to add data or feature, don't hesitate to modify everything you want.
+
 
 ## Rules
-* You have until Friday midnight to send the files compressed.
+* You have until Friday midnight to send the files compressed on nicolas.plovie@toutesmesaides.com.
 * You can choose to use [Angular](https://angular.io/) or whatever you want.`
-* Two views : Signin/Signup + Chat. The design is up to you to decide. Try to do your best. 
+* Two views : SignIn/SignUp + Chat. The design is up to you. Try to do your best. 
 * Use the node server for connection and [Socket.io](https://socket.io), The socket will send data after authentication..
 
 ## Node Server

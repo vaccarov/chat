@@ -1,0 +1,16 @@
+{
+  "name": "test-tma-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/browser-sync start --server --files '/index.html', 'public/js/*.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "jquery": "^3.4.1",
+    "socket.io": "^2.3.0"
+  }
+}
