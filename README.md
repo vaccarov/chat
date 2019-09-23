@@ -17,6 +17,7 @@ If you want to add data or feature, don't hesitate to modify everything you want
 * Two views : SignIn/SignUp + Chat. The design is up to you. Try to do your best. 
 * Use the node server for connection and [Socket.io](https://socket.io), The socket will send data after authentication..
 
+
 ## Node Server
 * [Node](https://nodejs.org/fr/download/) version: 10.16.0 or later
 * To run the server : `np run dev`
@@ -38,4 +39,10 @@ The two events for Socket.io are `'users'` and `'messages'`
 * Please use [Socket.io](https://socket.io) to communicate with the server.
 * The socket will send data after authentication.
 * Use whatever you want (framework, js Vanilla, jquery, bootstrap ect..)
+
+## Infos
+
+Run `npm i` in the server's folder and also in angular's folder.
+ 
+ If you want to use angular pleas install [Angular-Cli](https://cli.angular.io/)
 
