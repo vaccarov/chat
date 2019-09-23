@@ -49,3 +49,5 @@ Run `npm i` in the server's folder and also in angular's folder.
  
 If you want to use angular pleas install [Angular-Cli](https://cli.angular.io/)
 
+If you find a bug don't hesitate to write me.
+
