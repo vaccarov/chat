@@ -3,17 +3,20 @@
 ## Description
 
 The aim is to make a chat with live data (#messenger). The server is already code, but is not online you have 
-to run it on you computer. The server uses Express and Socket.io.
+to run it on you computer. The server uses Express and Socket.io. So you don't have to make the BackEnd, but only to focus
+on the FrontEnd and the design.
  
 You have to create a small Application with a a connection page and a chat page with the list of the users and all the 
 messages.
 
-If you want to add data or feature, don't hesitate to modify everything you want.
+If you want to add data or feature, don't hesitate to modify everything you want. And don't worry, knowing Angular is 
+not a requirement, we will only look your way to do this test. So, If you don't finish on
+time, don't worry, making your best is the unique requirement
 
 
 ## Rules
-* You have until Friday midnight to send the files compressed on nicolas.plovie@toutesmesaides.com.
-* You can choose to use [Angular](https://angular.io/) or whatever you want.`
+* You have until Friday 16h to send the files compressed at nicolas.plovie@toutesmesaides.com.
+* You can choose to use [Angular](https://angular.io/) or whatever you want.
 * Two views : SignIn/SignUp + Chat. The design is up to you. Try to do your best. 
 * Use the node server for connection and [Socket.io](https://socket.io), The socket will send data after authentication..
 
@@ -44,5 +47,5 @@ The two events for Socket.io are `'users'` and `'messages'`
 
 Run `npm i` in the server's folder and also in angular's folder.
  
- If you want to use angular pleas install [Angular-Cli](https://cli.angular.io/)
+If you want to use angular pleas install [Angular-Cli](https://cli.angular.io/)
 
