@@ -15,8 +15,7 @@ don't worry, making your best is the unique requirement
 * You have one week to send the link of the github repo you used or asking pull request from a branch -> (branchName: test-[[Name]]).
 * Two views : SignIn/SignUp + Chat.
  The design is up to you. Try to do your best. 
-* You can choose: use the node server for connection and [Socket.io](https://socket.io), The socket will send data after authentication.
-  OR use firebase 
+* You can choose: use the node server for connection and [Socket.io](https://socket.io), The socket will send data after authentication (take a look on Node Server doc below). Or you can use firebase 
 
 
 ## Node Server
