@@ -22,7 +22,7 @@ don't worry, making your best is the unique requirement
 * [Node](https://nodejs.org/fr/download/) version: 10.16.0 or later
 * To run the server : `np run dev`
 * Port: 3000
-* API swagger : run the server and ask the endpoints `api-doc`
+* API swagger : run the server and ask the endpoints `api-docs`
 * User test: `{login:'test', password:'test', uid:'test'}`
 * Cors white list : `[ 'http://localhost:4200', 'http://localhost:3001']` if you want to change it, modified it in `cors.config.js`
 
