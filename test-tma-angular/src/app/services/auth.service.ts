@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {tap} from "rxjs/operators";
-import {Socket} from "ngx-socket-io";
+import {map, tap} from "rxjs/operators";
 import {BehaviorSubject} from "rxjs";
 
 @Injectable({
@@ -13,8 +12,11 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private socket: Socket
   ) {
+    const user = this._getLocalStorageUser();
+    if (user) {
+      this._setConnected(user)
+    }
   }
 
   getUser() {
@@ -52,9 +54,29 @@ export class AuthService {
     return this._authStatus$
   }
 
+  isConnected() {
+    return this._authStatus$
+      .pipe(
+        map((auth) => auth.state === 'connected')
+      )
+  }
+
+  private _setLocalStorageUser(user) {
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+
+  private _getLocalStorageUser() {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      return JSON.parse(userString);
+    }
+    return null
+  }
+
   private _setConnected(user) {
     if (this._authStatus$.value.state !== 'connected') {
       this._authStatus$.next({user, state: 'connected'})
+      this._setLocalStorageUser(user)
     }
   }
 }

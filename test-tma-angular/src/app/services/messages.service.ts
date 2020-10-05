@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {first, tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,17 @@ export class MessagesService {
   private _messages$ = new BehaviorSubject(null);
 
   constructor(
-    private http: HttpClient
+    private _http: HttpClient
   ) {
+    this.initMessages().subscribe()
+  }
 
+  initMessages() {
+    return this._http.get('messages')
+      .pipe(
+        tap(messages => this.setMessages(messages)),
+        first()
+      )
   }
 
   getAllMessages() {
@@ -23,7 +32,7 @@ export class MessagesService {
   }
 
   sendOneMessage(msg) {
-    return this.http.post('messages', {
+    return this._http.post('messages', {
       msg: msg
     })
   }
