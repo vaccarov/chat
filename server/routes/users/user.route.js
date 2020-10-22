@@ -2,6 +2,7 @@ const router = require("express").Router();
 const userService = require("../../services/users");
 const room = require("../../socket/room")
 
+
 router.post('/', (req, res) => {
   try {
     const {login, password} = req.body;

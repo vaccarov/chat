@@ -45,5 +45,38 @@ router.post('/', (req, res) => {
 
 })
 
+/**
+ * @swagger
+ * /messages:
+ *   get:
+ *     tags:
+ *       - Messages
+ *     description: get all messages
+ *     parameters:
+ *
+ *     produces:
+ *       - application/json
+ *     responses:
+ *      200:
+ *        description: 'messages'
+ *      400:
+ *        description: 'missing data'
+ *      500:
+ *        description: 'error server'
+ *
+ */
+
+router.get('/',  (req, res) => {
+  try {
+    const messages = messageService.getAllMessages()
+    return  res.status(200).send(messages)
+  }catch (e) {
+    if (e.status) {
+      return res.status(e.status).send({sate: 'error', data: e.msg})
+    }
+    return res.status(500).send({sate: 'error', data: e})
+  }
+})
+
 
 module.exports = router;

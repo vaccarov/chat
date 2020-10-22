@@ -12,14 +12,13 @@ export class MessagesService {
   constructor(
     private _http: HttpClient
   ) {
-    this.initMessages().subscribe()
   }
 
   initMessages() {
     return this._http.get('messages')
       .pipe(
         tap(messages => this.setMessages(messages)),
-        first()
+        first(),
       )
   }
 
