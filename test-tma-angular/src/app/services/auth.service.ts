@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map, tap} from "rxjs/operators";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -74,9 +74,18 @@ export class AuthService {
   }
 
   private _setConnected(user) {
-    if (this._authStatus$.value.state !== 'connected') {
+    if (!user) {
+      this._authStatus$.next({user: null, state: 'disconnected'})
+      delete this._user;
+      localStorage.removeItem('user');
+    } else if (this._authStatus$.value.state !== 'connected') {
       this._authStatus$.next({user, state: 'connected'})
       this._setLocalStorageUser(user)
     }
+  }
+
+  logout(): Observable<boolean> {
+    this._setConnected(undefined);
+    return of(true);
   }
 }

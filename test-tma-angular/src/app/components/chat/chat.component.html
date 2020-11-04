@@ -1,0 +1,19 @@
+<div class="chat">
+    <div class="chat__messages" #messagesDiv>
+        <div
+            class="chat__messages-item"
+            [class.background]='i%2 === 0'
+            *ngFor='let m of messages; let i = index'>
+            <div class='chat__messages-item-user'>{{m.user.login}}</div>
+            <div class='chat__messages-item-msg'>{{m.msg}}</div>
+        </div>
+    </div>
+    <div class='chat__input'>
+        <input
+            type='text'
+            [(ngModel)]='message'
+            placeholder='Enter message and press Enter'
+            (keyup.enter)='sendMessage()'/>
+    </div>
+    <button class="chat__logout" (click)='logout()'>Logout</button>
+</div>

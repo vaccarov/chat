@@ -127,5 +127,10 @@
       }
     }
   },
-  "defaultProject": "test-tma"
+  "defaultProject": "test-tma",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

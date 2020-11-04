@@ -1,0 +1,11 @@
+<form class='login' [formGroup]="loginForm" (ngSubmit)='login()'>
+    <div class='login__title'>Enter your username and password :</div>
+    <input type="text" placeholder='Username' formControlName='user'/>
+    <input type="password" placeholder='Password' formControlName='password'/>
+    <button type='submit'
+        [disabled]='loginForm.invalid'>
+        Login
+    </button>
+
+    <a routerLink='/register'>Create an account</a>
+</form>

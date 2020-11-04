@@ -1,0 +1,11 @@
+<form class='register' [formGroup]="registerForm" (ngSubmit)='register()'>
+    <div class='register__title'>Fill form to create an account</div>
+    <input type="text" placeholder='Username' formControlName='user'/>
+    <input type="password" placeholder='Password' formControlName='password1'/>
+    <input type="password" placeholder='Retype your password' formControlName='password2'/>
+    <button type='submit'
+        [disabled]='registerForm.invalid'>
+        Register
+    </button>
+    <a routerLink='/login'>Go back to login</a>
+</form>
